@@ -27,14 +27,14 @@ if [[ "$ans" != "Y" && "$ans" != "y" ]]; then
 fi
 
 set -x
-docker build -t jmccann/drone-terraform:latest --build-arg terraform_version=${tf_ver} .
+docker build -t unladenswallow/drone-terraform:latest --build-arg terraform_version=${tf_ver} .
 
-docker tag jmccann/drone-terraform:latest jmccann/drone-terraform:${major}
-docker tag jmccann/drone-terraform:latest jmccann/drone-terraform:${major}.${minor}
-docker tag jmccann/drone-terraform:latest jmccann/drone-terraform:${major}.${minor}-${tf_ver}
+docker tag unladenswallow/drone-terraform:latest unladenswallow/drone-terraform:${major}
+docker tag unladenswallow/drone-terraform:latest unladenswallow/drone-terraform:${major}.${minor}
+docker tag unladenswallow/drone-terraform:latest unladenswallow/drone-terraform:${major}.${minor}-${tf_ver}
 
-docker push jmccann/drone-terraform:latest
-docker push jmccann/drone-terraform:${major}
-docker push jmccann/drone-terraform:${major}.${minor}
-docker push jmccann/drone-terraform:${major}.${minor}-${tf_ver}
+docker push unladenswallow/drone-terraform:latest
+docker push unladenswallow/drone-terraform:${major}
+docker push unladenswallow/drone-terraform:${major}.${minor}
+docker push unladenswallow/drone-terraform:${major}.${minor}-${tf_ver}
 set +x
